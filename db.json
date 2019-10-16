@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "name": "Trevor",
+      "id": 0
+    },
+    {
+      "id": 1,
+      "name": "Heather"
+    },
+    {
+      "name": "Seth",
+      "id": 2
+    },
+    {
+      "name": "Megan",
+      "id": 3
+    },
+    {
+      "name": "Daniel",
+      "id": 6
+    },
+    {
+      "name": "Kyle",
+      "id": 7
+    },
+    {
+      "name": "Jordan",
+      "id": 8
+    }
+  ]
+}
