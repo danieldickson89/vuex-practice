@@ -6,6 +6,7 @@ Vue.use(Router);
 import ComponentA from '../components/ComponentA';
 import ComponentB from '../components/ComponentB';
 import ComponentC from '../components/ComponentC';
+import ComponentD from '../components/ComponentD';
 
 const router = new Router ({
     mode: 'history',
@@ -17,18 +18,23 @@ const router = new Router ({
         },
         {
             path: '/',
-            name: 'ComponentA',
+            name: 'Create',
             component: ComponentA,  
         },
         {
-            path: '/ComponentB',
-            name: 'ComponentB',
+            path: '/Read',
+            name: 'Read',
             component: ComponentB,  
         },
         {
-            path: '/ComponentC',
-            name: 'ComponentC',
+            path: '/Update',
+            name: 'Update',
             component: ComponentC,  
+        },
+        {
+            path: '/Delete',
+            name: 'Delete',
+            component: ComponentD,  
         },
     ],
 });

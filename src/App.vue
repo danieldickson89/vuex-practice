@@ -20,5 +20,7 @@ export default {
 </script>
 
 <style>
-
+.menu-button {
+  width: 78px;
+}
 </style>
