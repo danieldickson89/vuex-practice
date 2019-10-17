@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
-        <img alt="Vue logo" src="../assets/logo.png">
-    </div>
     <div class="row justify-content-center mt-2">
         <div class="btn btn-secondary menu-button disabled" disabled>Create</div>
          <router-link class="btn btn-warning menu-button ml-3" :to="{name: 'Read', params: {}}">

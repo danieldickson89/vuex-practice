@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
-        <img alt="Vue logo" src="../assets/logo.png">
-    </div>
     <div class="row justify-content-center mt-2">
         <router-link class="btn btn-success menu-button" :to="{name: 'Create', params: {}}">
             Create
@@ -31,7 +28,7 @@
 import {action_updateStudent, action_deleteStudent} from '../store'
 
 export default {
-  name: 'ComponentB',
+  name: 'Delete',
   data() {
       return {
       }

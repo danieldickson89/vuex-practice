@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router);
 
-import ComponentA from '../components/ComponentA';
-import ComponentB from '../components/ComponentB';
-import ComponentC from '../components/ComponentC';
-import ComponentD from '../components/ComponentD';
+import Create from '../components/Create';
+import Read from '../components/Read';
+import Update from '../components/Update';
+import Delete from '../components/Delete';
 
 const router = new Router ({
     mode: 'history',
@@ -14,27 +14,27 @@ const router = new Router ({
     routes: [
         {
             path: '*',
-            component: ComponentA
+            component: Create
         },
         {
             path: '/',
             name: 'Create',
-            component: ComponentA,  
+            component: Create,  
         },
         {
             path: '/Read',
             name: 'Read',
-            component: ComponentB,  
+            component: Read,  
         },
         {
             path: '/Update',
             name: 'Update',
-            component: ComponentC,  
+            component: Update,  
         },
         {
             path: '/Delete',
             name: 'Delete',
-            component: ComponentD,  
+            component: Delete,  
         },
     ],
 });
