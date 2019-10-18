@@ -3,18 +3,19 @@
     <div class="row justify-content-center mt-3">
         <img alt="Vue logo" src="./assets/logo.png">
     </div>
-    <router-view></router-view>
+    <MenuToggle/>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
-import Create from './components/Create.vue'
 import {action_loadStudents} from './store'
+import MenuToggle from './components/MenuToggle'
 
 export default {
   name: 'app',
   components: {
-    Create
+    MenuToggle
   },
   async created() {
     this.$store.dispatch(action_loadStudents);
@@ -25,5 +26,8 @@ export default {
 <style>
 .menu-button {
   width: 78px;
+}
+.my-button {
+  cursor: pointer;
 }
 </style>
