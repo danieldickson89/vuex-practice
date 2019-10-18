@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
-        <div class="h3 mb-3">Update</div>
-    </div>
-    <div v-for="student in students" :key="student.id" class="row justify-content-center mb-2"> 
+    <div v-for="student in students" :key="student.id" class="row justify-content-center mt-3 mb-2"> 
         <input class="form-control col-4 mr-2" v-model="student.name"/>
         <div class="btn btn-success my-button col-1 mr-2" @click="updateStudent(student)">Update</div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="btn btn-primary my-button mr-2" @click="updateAll()">Update All</div>
     </div>
   </div>
 </template>
@@ -28,6 +28,11 @@ export default {
   methods: {
       updateStudent(student) {
           this.$store.dispatch(action_updateStudent, student);
+      },
+      updateAll() {
+          for (let i = 0; i < this.students.length; i++) {
+              this.$store.dispatch(action_updateStudent, this.students[i]);
+          }
       }
   }
 }

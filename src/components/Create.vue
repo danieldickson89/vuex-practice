@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
-        <div class="h3 mb-3">Create</div>
-    </div>
-    <div class="row justify-content-center mb-2"> 
+    <div class="row justify-content-center mt-3 mb-2"> 
         <input class="form-control col-4 mr-2" v-model="newStudent.name"/>
         <div class="btn btn-success my-button col-1" @click="addStudent">Add</div>
     </div>

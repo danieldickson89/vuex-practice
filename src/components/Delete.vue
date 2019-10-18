@@ -1,12 +1,11 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
-        <div class="h3 mb-3">Delete</div>
-    </div>
-    <div v-for="student in students" :key="student.id" class="row justify-content-center mb-2"> 
+    <div v-for="student in students" :key="student.id" class="row justify-content-center mt-3 mb-2"> 
         <div class="col-1"></div>
         <div class="col-5 text-right">{{student.name}}</div>
-        <div class="btn btn-danger my-button col-1" @click="deleteStudent(student)">Delete</div>
+        <div class="btn btn-danger my-button" @click="deleteStudent(student)">
+            <font-awesome-icon icon="trash"/>
+        </div>
         <div class="col-5"></div>
     </div>
   </div>
