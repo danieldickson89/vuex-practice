@@ -8,6 +8,16 @@
         </div>
         <div class="col-5"></div>
     </div>
+    <div class="row justify-content-center mt-3">
+        <transition name="fade">
+            <div v-if="showAlert" class="alert alert-danger alert-dismissible fade show col-5">
+                "{{deletedStudent.name}}" has been deleted
+                <button type="button" @click="dismissAlert()" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </transition>
+    </div>
   </div>
 </template>
 
@@ -19,6 +29,8 @@ export default {
   name: 'Delete',
   data() {
       return {
+          showAlert: false,
+          deletedStudent: null
       }
   },
   computed: {
@@ -28,12 +40,26 @@ export default {
   },
   methods: {
       deleteStudent(student) {
+          this.deletedStudent = student;
           this.$store.dispatch(action_deleteStudent, student);
+          this.showAlert = true;
+      },
+      dismissAlert() {
+          this.showAlert = false;
       }
   }
 }
 </script>
 
 <style scoped>
-
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    transition: opacity 1s;
+}
+.fade-leave-active{
+    transition: opacity 1s;
+    opacity: 0;
+}
 </style>
