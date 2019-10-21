@@ -29,6 +29,7 @@ export default {
               name: ''
           },
           nameText: '',
+          timeout: null,
           showAlert: false,
           addedName: null
       }
@@ -39,7 +40,7 @@ export default {
             this.addedName = this.nameText;
             this.newStudent.name = this.nameText;
             this.$store.dispatch(action_addStudent, this.newStudent);
-            this.showAlert = true;
+            this.displayAlert();
             this.clearText();
           }
       },
@@ -48,6 +49,14 @@ export default {
       },
       clearText() {
           this.nameText = '';
+      },
+      displayAlert() {
+          this.showAlert = true;
+          clearTimeout(this.timeout);
+          let that = this;
+          this.timeout = setTimeout(function() {
+              that.dismissAlert();
+          }, 3000);
       },
       dismissAlert() {
           this.showAlert = false;
@@ -62,9 +71,6 @@ export default {
 }
 .fade-enter-active{
     transition: opacity 1s;
-}
-.fade-leave{
-    /* opacity: 1; */
 }
 .fade-leave-active{
     transition: opacity 1s;

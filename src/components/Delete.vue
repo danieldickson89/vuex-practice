@@ -30,7 +30,8 @@ export default {
   data() {
       return {
           showAlert: false,
-          deletedStudent: null
+          deletedStudent: null,
+          timeout: null
       }
   },
   computed: {
@@ -42,7 +43,15 @@ export default {
       deleteStudent(student) {
           this.deletedStudent = student;
           this.$store.dispatch(action_deleteStudent, student);
+          this.displayAlert();
+      },
+      displayAlert() {
           this.showAlert = true;
+          clearTimeout(this.timeout);
+          let that = this;
+          this.timeout = setTimeout(function() {
+              that.dismissAlert();
+          }, 3000);
       },
       dismissAlert() {
           this.showAlert = false;
