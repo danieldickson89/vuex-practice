@@ -1,11 +1,7 @@
 <template>
   <div class="container">
     <div v-for="student in students" :key="student.id" class="row justify-content-center mt-3 mb-2"> 
-        <input class="form-control col-4 mr-2" v-model="student.name"/>
-        <div class="btn btn-success my-button col-1 mr-2" @click="updateStudent(student)">Update</div>
-    </div>
-    <div class="row justify-content-center mt-3">
-        <div class="btn btn-primary my-button mr-2" @click="updateAll()">Update All</div>
+        <input class="form-control col-4" v-model="student.name" @keyup="search(student)"/>
     </div>
   </div>
 </template>
@@ -18,6 +14,7 @@ export default {
   name: 'Update',
   data() {
       return {
+          timeout: null
       }
   },
   computed: {
@@ -33,6 +30,13 @@ export default {
           for (let i = 0; i < this.students.length; i++) {
               this.$store.dispatch(action_updateStudent, this.students[i]);
           }
+      },
+      search(student) {
+          clearTimeout(this.timeout);
+          let that = this;
+          this.timeout = setTimeout(function() {
+              that.updateStudent(student);
+          }, 1000);
       }
   }
 }
